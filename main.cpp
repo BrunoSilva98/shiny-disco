@@ -1,5 +1,7 @@
 #include <iostream>
+#include "BitMapFileHeader.h"
+#include "BitMapInfoHeader.h"
 
 int main(int, char**) {
-    std::cout << "Hello, world!\n";
+    return 0;
 }

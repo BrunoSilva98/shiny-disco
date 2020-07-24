@@ -6,6 +6,7 @@ enable_testing()
 
 add_executable(shiny-disco 
     main.cpp
+    
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

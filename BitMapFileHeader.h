@@ -4,9 +4,8 @@
 #include <cstdint>
 
 #pragma pack(2)
-namespace bmp
-{
-struct BitMapHeader
+namespace bmp {
+struct BitMapFileHeader
 {
     char header[2]{'B', 'M'};
     std::int32_t fileSize;

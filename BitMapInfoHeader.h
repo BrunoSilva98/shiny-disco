@@ -4,8 +4,7 @@
 #include <cstdint>
 
 #pragma pack(2)
-namespace bmp
-{
+namespace bmp {
 struct BitMapInfoHeader
 {
     std::int32_t headerSize{40};

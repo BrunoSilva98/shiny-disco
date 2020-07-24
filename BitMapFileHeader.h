@@ -4,7 +4,8 @@
 #include <cstdint>
 
 #pragma pack(2)
-
+namespace bmp
+{
 struct BitMapHeader
 {
     char header[2]{'B', 'M'};
@@ -12,5 +13,6 @@ struct BitMapHeader
     std::int32_t reserved{0};
     std::int32_t dataOffset;
 };
+}
 
 #endif // __BITMAPFILEHEADER_H__

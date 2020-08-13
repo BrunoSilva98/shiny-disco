@@ -1,0 +1,21 @@
+#include "ZoomList.h"
+
+
+namespace bmp
+{
+    ZoomList::ZoomList(int width, int height): m_width(width), m_height(height)
+    {
+    }
+    
+    void ZoomList::add(const Zoom& zoom) 
+    {
+        m_zooms.push_back(zoom);
+    }
+    
+    std::pair<double, double> ZoomList::doZoom(int x, int y) 
+    {
+        return std::pair<double, double>(0, 0);
+    }
+
+
+}

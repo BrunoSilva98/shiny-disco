@@ -9,6 +9,7 @@ add_executable(shiny-disco
     Bitmap.cpp 
     Mandelbrot.cpp
     ZoomList.cpp
+    FractalCreator.cpp
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

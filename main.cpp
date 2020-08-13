@@ -18,7 +18,9 @@ int main(int, char**) {
     // double max = -999999;
 
     bmp::ZoomList zoomList(WIDTH, HEIGHT);
-    zoomList.add(bmp::Zoom(WIDTH/2, HEIGHT/2, 3.0/WIDTH));
+    zoomList.add(bmp::Zoom(WIDTH/2, HEIGHT/2, 4.0/WIDTH));
+    zoomList.add(bmp::Zoom(295, HEIGHT - 202, 0.1));
+    zoomList.add(bmp::Zoom(312, HEIGHT - 304, 0.1));
 
     std::unique_ptr<int[]> histogram(new int[bmp::Mandelbrot::MAX_ITERATIONS]{});
     std::unique_ptr<int[]> fractal(new int[WIDTH * HEIGHT]{});

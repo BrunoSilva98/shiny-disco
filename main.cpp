@@ -2,9 +2,11 @@
 #include <cstdint>
 #include <memory>
 #include <math.h>
+#include <utility>
 
 #include "Bitmap.h"
 #include "Mandelbrot.h"
+#include "Zoom.h"
 #include "ZoomList.h"
 
 int main(int, char**) {
@@ -12,8 +14,11 @@ int main(int, char**) {
     const int HEIGHT = 600;
 
     bmp::Bitmap bitmap(WIDTH, HEIGHT);
-    double min = 999999;
-    double max = -999999;
+    // double min = 999999;
+    // double max = -999999;
+
+    bmp::ZoomList zoomList(WIDTH, HEIGHT);
+    zoomList.add(bmp::Zoom(WIDTH/2, HEIGHT/2, 3.0/WIDTH));
 
     std::unique_ptr<int[]> histogram(new int[bmp::Mandelbrot::MAX_ITERATIONS]{});
     std::unique_ptr<int[]> fractal(new int[WIDTH * HEIGHT]{});
@@ -22,10 +27,9 @@ int main(int, char**) {
     {
         for (int x = 0; x < WIDTH; x++)
         {
-            double xFractal = (x - WIDTH/2 - 200) * 2.0/HEIGHT;
-            double yFractal = (y - HEIGHT/2) * 2.0/HEIGHT;
+            std::pair<double, double> coords = zoomList.doZoom(x, y);
 
-            int iterations = bmp::Mandelbrot::getIterations(xFractal, yFractal);
+            int iterations = bmp::Mandelbrot::getIterations(coords.first, coords.second);
             fractal[y*WIDTH+x] = iterations;
 
             if (iterations != bmp::Mandelbrot::MAX_ITERATIONS)

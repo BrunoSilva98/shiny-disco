@@ -5,6 +5,7 @@
 
 #include "Bitmap.h"
 #include "Mandelbrot.h"
+#include "Zoom.h"
 
 int main(int, char**) {
     const int WIDTH = 800;

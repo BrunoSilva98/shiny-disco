@@ -77,4 +77,9 @@ namespace bmp
     {
         m_zoomList.add(zoom);
     }
+    
+    int FractalCreator::getHeight() 
+    {
+        return m_height;
+    }
 }

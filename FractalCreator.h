@@ -17,7 +17,6 @@ public:
     void drawFractal();
     void writeBitmap(std::string name);
     void addZoom(const Zoom& zoom);
-    int getWidth();
     int getHeight();
 
 private:
